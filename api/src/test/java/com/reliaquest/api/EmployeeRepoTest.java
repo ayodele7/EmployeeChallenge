@@ -16,17 +16,16 @@ public class EmployeeRepoTest {
 
         @BeforeEach
         void setUp() {
-            repo = new EmployeeRepoImpl(); // fresh repo before each test
+            repo = new EmployeeRepoImpl();
         }
 
         @Test
         void testFindAll_returnsAllEmployees() {
-            // Act
             List<Entity> result = repo.findAll();
 
             // Assert
             assertThat(result).isNotNull();
-            assertThat(result).hasSize(12); // 12 mock employees
+            assertThat(result).hasSize(12);
         }
 
     @Test
@@ -65,7 +64,7 @@ public class EmployeeRepoTest {
     void testFindTop10Salary_returnsNamesSorted() {
         List<String> topNames = repo.findTop10Salary();
         assertEquals(10, topNames.size());
-        assertEquals("Charlie Brown", topNames.get(0)); // highest salary first
+        assertEquals("Charlie Brown", topNames.get(0));
     }
 
 
